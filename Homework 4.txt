@@ -1,0 +1,95 @@
+1.What two functions are used to add or remove elements from the beginning of an array? *
+
+answer: array_shfit()  and array_unshift()
+
+2Briefl y describe the array_pop() and array_push()functions. 
+
+answer:
+array_pop() Deletes the last element of an array 
+example:
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$a=array("red","green","blue");
+array_pop($a);
+print_r($a);
+?>
+
+</body>
+</html>
+
+answer:
+Array ( [0] => red [1] => green )
+
+array_push() Inserts one or more elements to the end of an array
+example:
+<!DOCTYPE html>
+<html>
+<body>
+
+3.What function is used to add a new element at any position in an array?
+
+answer: array_splice()
+
+Syntax:
+
+array array_splice ($input, $offset [, $length [, $replacement]])
+
+Code:
+<?php
+$a=array("a"=>"red","b"=>"green");
+array_push($a,"blue","yellow");
+print_r($a);
+?>
+
+</body>
+</html>
+
+Output:
+Array ( [a] => red [b] => green [0] => blue [1] => yellow )
+
+4.Explain the process of using the array_splice() function to delete an array element. *
+
+array_splie;
+The array_splice()  function removes selected elements from an array and replaces it with new elements. The function also returns an array with the removed elements.
+
+Syntax
+array_splice(array, start, length, array)
+
+START: Required. Numeric value. Specifies where the function will start removing elements. 0 = the first element. If this value is set to a negative number, the function will start that far from the last element. -2 means start at the second last element of the array
+
+LENGHT: Optional. Numeric value. Specifies how many elements will be removed, and also length of the returned array. If this value is set to a negative number, the function will stop that far from the last element. If this value is not set, the function will remove all elements, starting from the position set by the start-parameter.
+
+ARRAY:	Optional. Specifies an array with the elements that will be inserted to the original array. If it's only one element, it can be a string, and does not have to be an array.
+
+5.What function must be used in conjunction with the array_unique() function to renumber the indexes after the duplicates have been removed?
+
+The array_unique() : function removes duplicate values from an array. If two or more array values are the same, the first appearance will be kept and the other will be removed
+
+Syntax
+array_unique(array, sorttype)
+
+SORTTYPE:	Optional. Specifies how to compare the array elements/items. Possible values:
+SORT_STRING - Default. Compare items as strings
+SORT_REGULAR - Compare items normally (don't change types)
+SORT_NUMERIC - Compare items numerically
+SORT_LOCALE_STRING - Compare items as strings, based on current locale
+
+Example:
+Code:
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$a=array("a"=>"red","b"=>"green","c"=>"red");
+print_r(array_unique($a));
+?>
+
+</body>
+</html>
+
+Output
+Array ( [a] => red [b] => green )
